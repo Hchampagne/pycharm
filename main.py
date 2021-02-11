@@ -1,19 +1,24 @@
-import sys
-nb1 = input("Saisissez un premier nombre: ")
-try:
-    nb1 = int(nb1)
-except:
-    print("La conversion de ce nombre s’est mal passée", file=sys.stderr)
-    sys.exit()
-try:
-    nb2 = int(input("Saisissez un deuxième nombre: "))
-except:
-    print("La conversion de ce nombre s’est mal passée", file=sys.stderr)
-    sys.exit()
+import random
 
-if nb1 < nb2:
-    print("<")
-elif nb1 > nb2:
-    print(">")
-else:
-    print("=")
+nombre = random.randint(0, 100)
+print(nombre)
+
+while True:
+    choix = input("choisit un nombre entre 0 et 100 :")
+    try:
+        choix = int(choix)
+    except:
+        print("Entre 0 et 100, faut lire un peu !")
+        pass
+    else:
+        if 0 < choix < 100:
+
+            if nombre == choix:
+                print("GOOD JOB !")
+                break
+            if nombre < choix:
+                print("Trop grand ! ")
+            if nombre > choix :
+                print("Top petit ! ")
+        else:
+            print("ENTRE 0 et 100 ! ")
